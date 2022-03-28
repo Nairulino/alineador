@@ -1,0 +1,7 @@
+{
+  "name": "alineador",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
