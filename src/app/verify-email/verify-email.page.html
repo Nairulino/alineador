@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Verificar email
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Verificar email</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <h2>Verificación de email en Alineador</h2>
+      <p>
+        Por favor, revisa tu email y haz click en el enlace para verificar tu dirección.
+      </p>
+      <ion-button type="submit" (click)="authService.SendVerificationMail()" expand="block">
+        Reenviar email de verificación.
+      </ion-button>
+    </ion-row>
+  </ion-grid>  
+</ion-content>
