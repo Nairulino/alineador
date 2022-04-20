@@ -50,11 +50,12 @@ export class AuthenticationService {
   // Recover password
   PasswordRecover(passwordResetEmail) {
     return this.ngFireAuth
-      .sendPasswordResetEmail(passwordResetEmail)
+      .sendPasswordResetEmail(passwordResetEmail.value)
       .then(() => {
         window.alert(
           'Se ha enviado el correo de reestablecimiento, revisa tu bandeja de entrada.'
         );
+        this.router.navigate(['login']);
       })
       .catch((error) => {
         window.alert(error);
