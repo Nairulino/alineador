@@ -1,5 +1,21 @@
-#registration {
-  text-align: center;
-  margin-left: 5%;
-  margin-right: 5%;
+$layout-breakpoint-small: 960px;
+
+@media (min-width: $layout-breakpoint-small) {
+  #registration {
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
 }
+
+@media (max-width: $layout-breakpoint-small) {
+  
+  #registration {
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
