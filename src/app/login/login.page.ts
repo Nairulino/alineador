@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/auth.service';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +9,11 @@ import { AuthenticationService } from '../services/auth.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
+  user: Object
   constructor(
     public authService: AuthenticationService,
-    public router: Router
+    public router: Router,
+    public db: AngularFireDatabase
   ) {}
 
   ngOnInit() {}
@@ -20,7 +22,7 @@ export class LoginPage implements OnInit {
     this.authService.SignIn(email.value, password.value)
       .then((res) => {
         if(res.user.emailVerified) {
-          this.router.navigate(['tabs']);          
+          this.router.navigate(['tabs'])
         } else {
           window.alert('El email no está verificado.')
           return false;
